@@ -8,7 +8,6 @@
 import Cards from './Cards.vue'
 export default {
   components: { Cards },
-
 }
 </script>
 

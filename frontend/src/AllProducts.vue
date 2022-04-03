@@ -1,16 +1,13 @@
 <template>
-  <div></div>
+  <Navbar />
+  <CardGrid />
 </template>
 
 <script>
+import CardGrid from './components/cards/CardGrid.vue'
+import Navbar from './components/navigation/Navbar.vue'
 export default {
-  data() {
-    return {
-      products: [
-        { _id: '1', name: '', short: '', desc: '', price: '', image: '', stock: '' }
-      ]
-    }
-  }
+  components: { Navbar, CardGrid },
 }
 </script>
 
