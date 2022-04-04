@@ -1,8 +1,10 @@
-import { createApp } from 'vue'
+import Vue from 'vue'
 import App from './App.vue'
-import AllProducts from './AllProducts.vue'
-import ProductPage from './ProductPage.vue'
+import router from './router'
+import store from './store'
 
-createApp(App).mount('#app')
-createApp(AllProducts).mount('#allProducts')
-createApp(ProductPage).mount('#productPage')
+new Vue({
+  router,
+  store,
+  render: h => h(App)
+}).$mount('#app')
