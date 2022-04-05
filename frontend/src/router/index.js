@@ -31,8 +31,6 @@ const router = new VueRouter({
   routes
 })
 
-// router.beforeEach((to, from, next) => {
-//   const
-// })
+router.push({path:"/"})
 
 export default router

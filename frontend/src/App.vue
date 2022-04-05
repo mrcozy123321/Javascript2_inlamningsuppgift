@@ -1,11 +1,11 @@
 <template>
   <Navbar />
   <Carousel />
+  <router-view/>
   <CallToAction />
 </template>
 
 <script>
-
 import CallToAction from './components/navigation/CallToAction.vue'
 import Carousel from './components/navigation/Carousel.vue'
 import Navbar from './components/navigation/Navbar.vue'
