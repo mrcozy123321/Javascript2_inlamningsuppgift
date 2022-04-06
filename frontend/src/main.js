@@ -4,9 +4,14 @@ import router from './router'
 import store from './store'
 
 Vue.config.productionTip = false
+window.axios = require('axios');
 
 new Vue({
   router,
   store,
-  render: h => h(App)
+  el: '#app',
+  template: '<App/>',
+  render: h => h(App),
+  components: { App },
 }).$mount('#app')
+

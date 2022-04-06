@@ -1,8 +1,10 @@
 <template>
-  <Navbar />
-  <Carousel />
-  <router-view/>
-  <CallToAction />
+  <div>
+    <Navbar />
+    <Carousel />
+    <router-view/>
+    <CallToAction />
+  </div>
 </template>
 
 <script>
