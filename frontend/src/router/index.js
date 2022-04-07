@@ -4,6 +4,7 @@ import Home from '../views/Home.vue'
 import AllProducts from '../views/AllProducts.vue'
 import ProductDetails from '../views/ProductDetails.vue'
 
+
 Vue.use(VueRouter);
 
 const routes = [
@@ -25,11 +26,22 @@ const routes = [
   }
 ]
 
-const router = new VueRouter({
-  mode: 'hash',
+const router = VueRouter.createRouter({
+  history: VueRouter.createWebHistory(),
   base: process.env.BASE_URL,
   routes
 })
+
+const app = Vue.createApp({})
+
+app.use(router)
+app.mount('#app')
+
+// const router = new VueRouter({
+//   mode: 'history',
+//   base: process.env.BASE_URL,
+//   routes
+// })
 
 
 export default router
