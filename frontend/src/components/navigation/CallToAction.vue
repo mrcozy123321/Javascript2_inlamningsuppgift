@@ -1,5 +1,6 @@
 <template>
-  <button type="button" class="btn btn-success centerbutton btn-size" data-mdb-ripple-color="dark">Take a look at our products!</button>
+  <router-link to="/products"><button type="button" class="btn btn-success centerbutton btn-size" data-mdb-ripple-color="dark">Take a look at our products!</button></router-link>
+  
 </template>
 
 <script>
@@ -20,6 +21,6 @@ export default {
     top:50%;
     left:50%;
     margin-top:-5rem;
-    margin-left:-12.5rem;
+    margin-left:-15rem;
   }
 </style>

@@ -1,18 +1,22 @@
 <template>
   <div class="col">
     <div class="card h-100">
-      <img src="" class="card-img-top" alt="...">
+      <router-link to="'/products/' + product._id" class="text-decoration-none text-dark">
+      <img class="card-img-top" :src="(product.image)" alt="Card image">
       <div class="card-body">
-        <h5 class="card-title">Card title</h5>
-        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+        <h5 class="card-title">{{ product.name }}</h5>
+        <h5 class="card-title">${{ product.price }}</h5>
+        <p class="card-text">{{ product.short }}</p>
       </div>
+      </router-link>
     </div>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'CardComponent'
+  name: 'CardComponent',
+  props: ['product']
 }
 </script>
 
