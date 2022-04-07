@@ -1,11 +1,11 @@
-import Vue from 'vue'
-import VueRouter from 'vue-router'
+// import Vue from 'vue'
+import { createRouter, createWebHistory } from 'vue-router'
 import Home from '../views/Home.vue'
 import AllProducts from '../views/AllProducts.vue'
 import ProductDetails from '../views/ProductDetails.vue'
 
 
-Vue.use(VueRouter);
+// Vue.use(VueRouter);
 
 const routes = [
   {
@@ -26,16 +26,11 @@ const routes = [
   }
 ]
 
-const router = VueRouter.createRouter({
-  history: VueRouter.createWebHistory(),
-  base: process.env.BASE_URL,
+const router = createRouter({
+  history: createWebHistory(process.env.BASE_URL),
   routes
 })
 
-const app = Vue.createApp({})
-
-app.use(router)
-app.mount('#app')
 
 // const router = new VueRouter({
 //   mode: 'history',
