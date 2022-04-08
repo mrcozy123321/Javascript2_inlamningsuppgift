@@ -1,6 +1,6 @@
-<template>
-  <div class="row row-cols-1 row-cols-md-3 g-4">
-    <cards key="product._id" :product="product"/>
+<template v-for="product in products">
+  <div key="product._id" class="row row-cols-1 row-cols-md-3 g-4">
+    <cards :product="product"/>
   </div>
 </template>
 
