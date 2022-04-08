@@ -16,7 +16,25 @@
 <script>
 export default {
   name: 'CardComponent',
-  props: ['product']
+  props: ['product'],
+  data () {
+    return {
+      products: [],
+    };
+  },
+  methods: {
+    async getData() {
+      try {
+        const response = await this.$http.get("http://localhost:8080/api/products");
+        this.products = response.data;
+      } catch (error) {
+        console.log(error)
+      }
+    }
+  },
+  created() {
+    this.getData();
+  }
 }
 </script>
 

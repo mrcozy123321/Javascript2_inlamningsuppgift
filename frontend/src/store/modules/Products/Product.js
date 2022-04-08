@@ -22,11 +22,11 @@ export default {
   },
   actions: {
     getOneProduct: async ({commit}, _id) => {
-      const res = await axios.get('/products' + _id)
+      const res = await axios.get('http://localhost:8080/api/products' + _id)
       commit('GET_A_PRODUCT', res.data)
     },
     deleteOneProduct: async ({commit}, _id) => {
-      const res = await axios.delete('products' + _id)
+      const res = await axios.delete('http://localhost:8080/api/products' + _id)
       commit('DELETE_A_PRODUCT', res.data)
     },
     addProduct: async ({commit}, data) => {
@@ -38,7 +38,7 @@ export default {
         image:  data.image,
         stock:  data.stock
       }
-      await axios.post('/products', newProduct)
+      await axios.post('http://localhost:8080/api/products', newProduct)
       commit('NEW_PRODUCT', {newProduct})
     }
   }

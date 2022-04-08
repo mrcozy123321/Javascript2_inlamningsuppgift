@@ -14,7 +14,7 @@ export default {
   },
   actions: {
     getProducts: async ({commit}) => {
-      const res = await axios.get('/products')
+      const res = await axios.get('http://localhost:8080/api/products')
       commit('GET_PRODUCTS', res.data)
     }
   }
