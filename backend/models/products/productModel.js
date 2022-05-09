@@ -5,6 +5,7 @@ exports.getProducts = async (req, res) => {
   try {
     const data = await Product.find()
     res.status(200).json(data)
+    console.log(data)
   }
   catch {
     res.status(500).json({
@@ -50,6 +51,7 @@ exports.getProductById = (req, res) => {
 }
 
 exports.createProduct = (req, res) => {
+  
 
   Product.exists({ name: req.body.name }, (err, result) => {
 

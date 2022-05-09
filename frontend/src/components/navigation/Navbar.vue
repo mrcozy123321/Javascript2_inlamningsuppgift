@@ -22,6 +22,8 @@ export default {
 }
 </script>
 
-<style scoped>
-
+<style >
+  .navbar-nav a {
+    text-decoration: none;
+  }
 </style>

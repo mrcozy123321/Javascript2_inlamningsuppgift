@@ -1,7 +1,7 @@
 <template>
   <div class="col">
     <div class="card h-100">
-      <router-link to="'/products/' + product._id" class="text-decoration-none text-dark">
+      <router-link :to="'/products/' + product._id" class="text-decoration-none text-dark">
       <img class="card-img-top" :src="(product.image)" alt="Card image">
       <div class="card-body">
         <h5 class="card-title">{{ product.name }}</h5>
@@ -14,26 +14,18 @@
 </template>
 
 <script>
+import {mapActions, mapGetters} from 'vuex'
 export default {
   name: 'CardComponent',
   props: ['product'],
-  data () {
-    return {
-      products: [],
-    };
-  },
   methods: {
-    async getData() {
-      try {
-        const response = await this.$http.get("http://localhost:8080/api/products");
-        this.products = response.data;
-      } catch (error) {
-        console.log(error)
-      }
-    }
+    ...mapActions(['getProducts']),
   },
-  created() {
-    this.getData();
+  computed: {
+    ...mapGetters(['products'])
+  },
+  mounted() {
+    this.getProducts()
   }
 }
 </script>
